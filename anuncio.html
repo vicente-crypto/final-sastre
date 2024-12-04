@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari</title>
+    <link rel="stylesheet" href="ferrari.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .anuncio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espacio entre elementos */
+            background-color: #white; /* Cambié el color de fondo ya que 'grey' no es un color válido */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 728px;
+            height: 100px;
+            margin: auto;
+        }
+
+        .logo, .ad-image {
+            height: 60px; /* Ajusté el tamaño para mantener la proporción */
+            display: block;
+        }
+
+        .logo:hover, .ad-image:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Estilo del botón */
+        .btn-visitar {
+            text-decoration: none;
+            background-color: #fd1f1f; /* Color del botón */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            align-self: center; /* Centramos verticalmente el botón */
+        }
+
+        .btn-visitar:hover {
+            background-color: #0056b3; /* Color al pasar el mouse */
+        }
+
+        /* Estilos para pantallas pequeñas */
+        @media (max-width: 727px) {
+            .anuncio {
+                flex-direction: column; /* Cambiar disposición a vertical en pantallas pequeñas */
+                gap: 10px;
+                width: 300px;
+                height: auto; /* Ajustamos la altura en pantallas pequeñas */
+            }
+
+            .logo, .ad-image {
+                height: 40px; /* Ajustar tamaño en móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="anuncio">
+        <a href="index.html" target="_blank">
+            <img class="logo" src="imagenes/grandes/Ferrari-Scuderia.jpg" alt="Logo Ferrari">
+        </a>
+
+        <!-- Botón centrado y en la misma línea que las imágenes -->
+        <a href="index.html" target="_blank" class="btn-visitar">Visitar Página</a>
+
+        <a href="otra-pagina.html" target="_blank">
+            <img class="ad-image" src="imagenes/grandes/anuncioferrari.jpg" alt="Anuncio Ferrari">
+        </a>
+    </div>
+</body>
+</html>

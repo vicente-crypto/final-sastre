@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ferrari - Innovación en Autos Deportivos. Descubre nuestra historia, modelos y tecnología.">
+    <title>Ferrari - Velocidad y Exclusividad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ferrari.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Aseguramos que el slider ocupe todo el ancho */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .presentacion {
+            width: 100%; /* Hace que las imágenes ocupen todo el ancho */
+            height: auto;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 2rem;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .cajacontenedora {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .cajacontenedora a {
+            color: #d70000;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cajacontenedora a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .prev, .next {
+                font-size: 1.5rem;
+                padding: 8px;
+            }
+
+            .cajacontenedora {
+                padding: 15px;
+            }
+
+            .cajacontenedora a {
+                font-size: 16px;
+            }
+        }
+
+        /* Asegurando que las imágenes del slider no se deformen */
+        .presentacion {
+            object-fit: cover; /* Hace que la imagen cubra el área del slider sin distorsionarse */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+  <main>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide active">
+          <img class="presentacion" src="imagenes/grandes/presentacion1.jpg" alt="presentacion">
+        </div>
+        <div class="slide">
+          <img class="presentacion" src="imagenes/grandes/presentacion2.jpg" alt="presentacion">
+        </div>
+        <div class="slide">
+          <img class="presentacion" src="imagenes/grandes/presentacion3.jpg" alt="presentacion">
+        </div>
+        <div class="slide">
+          <img class="presentacion" src="imagenes/grandes/presentacion4.jpg" alt="presentacion">
+        </div>
+      </div>
+      <button class="prev" onclick="moveSlide(-1)" id="anterior">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)" id="siguiente">&#10095;</button>
+    </div>
+
+    <footer>
+      <div class="cajacontenedora">
+        <a href="https://vicente-crypto.github.io/100-VICENTE-SASTRE-ferrari.final/">Ferrari Oficial</a>
+      </div>
+    </footer>
+  </main>
+
+  <script type="text/javascript">
+    const diapositivas = document.querySelectorAll('.slide');
+    let diapositivaActual = 0;
+    const tiempoTransicion = 10000; // Tiempo en milisegundos entre diapositivas
+
+    function cambiarDiapositiva(n) {
+      diapositivas[diapositivaActual].classList.remove('activa');
+      diapositivaActual = (diapositivaActual + n + diapositivas.length) % diapositivas.length;
+      diapositivas[diapositivaActual].classList.add('activa');
+    }
+
+    const botonAnterior = document.getElementById('anterior');
+    botonAnterior.addEventListener('click', () => {
+      cambiarDiapositiva(-1);
+    });
+
+    const botonSiguiente = document.getElementById('siguiente');
+    botonSiguiente.addEventListener('click', () => {
+      cambiarDiapositiva(1);
+    });
+
+    // Temporizador automático
+    setInterval(() => {
+      cambiarDiapositiva(1);
+    }, tiempoTransicion);
+  </script>
+
+</body>
+</html>

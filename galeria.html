@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes - Ferrari</title>
+    <link rel="stylesheet" href="ferrari.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="imagenes/grandes/logoferrari.png" alt="Logo Ferrari">
+        </div>
+        <h1>Galería de Imágenes Ferrari</h1>
+        <div class="contacto">
+            <a href="index.html">Volver a Inicio</a>
+        </div>
+    </header>
+
+    <section id="galeria" class="galeria">
+        <h2>Galería de Imágenes</h2>
+        <div class="galeria-grid">
+
+            <a href="javascript:void(0)" onclick="abrirLightbox('imagenes/miniaturas/ferraripurosangre-mini.jpg')">
+                <img src="imagenes/miniaturas/ferraripurosangre-mini.jpg" alt="Ferrari 1">
+            </a>
+            <a href="javascript:void(0)" onclick="abrirLightbox('imagenes/miniaturas/ferrariroma-mini.jpg')">
+                <img src="imagenes/miniaturas/ferrariroma-mini.jpg" alt="Ferrari 2">
+            </a>
+            <a href="javascript:void(0)" onclick="abrirLightbox('imagenes/miniaturas/ferrarisf90stradale-mini.jpg')">
+                <img src="imagenes/miniaturas/ferrarisf90stradale-mini.jpg" alt="Ferrari 3">
+            </a>
+        </div>
+    </section>
+
+
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="cerrarLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Imagen grande">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ferrari. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+
+    function abrirLightbox(src) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        lightbox.style.display = "block";
+        lightboxImg.src = src;
+    }
+
+
+    function cerrarLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+    </script>
+
+</body>
+</html>
