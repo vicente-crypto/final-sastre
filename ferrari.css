@@ -547,3 +547,161 @@ img.presentacion {
     padding: 100px 20px;
     background-color: #222; /* Fondo oscuro */
 }
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0b0b0b;
+    color: #f5f5f5;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding-top: 70px; /* Espacio para el header fijo */
+}
+
+/* Encabezado y navegación */
+header {
+    background: linear-gradient(to right, #000, #444);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+header .logo img {
+    max-width: 80px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    color: #d40000;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: #111;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 60px; /* Ajustado para móviles */
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Secciones principales */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #d40000;
+    margin-bottom: 20px;
+}
+
+/* Modelos */
+.modelo {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modelo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.modelo h3 {
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Sección Contacto */
+#contacto p, #contacto a {
+    font-size: 1em;
+}
+
+#contacto a {
+    padding: 8px 16px;
+    font-size: 1em;
+}
+
+/* Publicidad */
+.anuncio {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav {
+        top: 120px; /* Ajustado para el header más alto */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modelo img {
+        margin-bottom: 10px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    #tecnologia ul li, #contacto p {
+        font-size: 1em;
+    }
+}
