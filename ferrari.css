@@ -62,7 +62,7 @@ nav {
     padding: 10px 0;
     position: fixed; /* Fija la barra de navegación */
     width: 100%;
-    top: 160px; /* Inicialmente debajo del header */
+    top: 190px; /* Inicialmente debajo del header */
     z-index: 1000;
     transition: top 0.3s ease; /* Transición suave */
 }
