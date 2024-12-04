@@ -73,7 +73,7 @@ nav.hidden {
 
 /* Ajusta el contenido principal para evitar solapamiento */
 main {
-    padding-top: 50px; /* Espacio suficiente para el header y nav */
+    padding-top: 90px; /* Espacio suficiente para el header y nav */
 }
 
 nav ul {
